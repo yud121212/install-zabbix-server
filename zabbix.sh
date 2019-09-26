@@ -62,7 +62,7 @@ echo "Infor username and passsword of zabbix"
 read -p "-zabbix user:" zabbixuser
 read -p "-zabbix pass:" zabbixpass
 
-mysql -u$user -p$passwd -e "create database $database;"
+mysql -u$user -p$passwd -e "create database $database character set utf8 collate utf8_bin;"
 mysql -u$user -p$passwd -e "create user '$zabbixuser'@'localhost' identified BY '$zabbixpass';"
 mysql -u$user -p$passwd -e "grant all privileges on $database.* to $zabbixuser@localhost ;"
 mysql -u$user -p$passwd -e "flush privileges;"

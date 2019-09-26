@@ -87,7 +87,7 @@ echo "alert /usr/share/doc/zabbix-server-mysql-* kiem tra thu muc nay"
 cd /usr/share/doc/zabbix-server-mysql-4.0.12/
 zcat create.sql.gz | mysql -u $zabbixuser -p $database
 
-sed -i 's/# DBHost=/DBHost=localhost #/' /etc/zabbix/zabbix_server.conf
+sed -i 's/# DBHost=/DBHost=localhost/' /etc/zabbix/zabbix_server.conf
 sed -i 's/# DBName=/DBName='$database' #/' /etc/zabbix/zabbix_server.conf
 sed -i 's/# DBUser=/DBUser='$zabbixuser' #/' /etc/zabbix/zabbix_server.conf
 sed -i 's/# DBPassword=/DBPassword='$zabbixpass' #/' /etc/zabbix/zabbix_server.conf
